@@ -1,0 +1,15 @@
+@main() {
+    x1: bool = const true;
+    .for.cond:
+        br x1 .for.body .for.end;
+        .for.body:
+            x2: bool = const false;
+            br x2 .if.true .if.false;
+            .if.true:
+                x1: bool = const false;
+                jmp .for.cond;
+            .if.false:
+                jmp .for.cond;
+        .for.end:
+            print x2;    
+}   
